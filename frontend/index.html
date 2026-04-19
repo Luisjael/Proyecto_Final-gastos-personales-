@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos Personales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gastos Personales</h1>
+    </header>
+    <section class="resumen">
+        <div class="tarjeta balance">
+            <h3>Balance</h3>
+            <p id="balance">0.00</p>
+        </div>
+        <div class="tarjeta ingreso">
+            <h3>Ingresos</h3>
+            <p id="total-ingresos">0.00</p>
+        </div>
+        <div class="tarjeta gasto">
+            <h3>Gastos</h3>
+            <p id="total-gastos">0.00</p>
+        </div>
+
+    </section>
+    <section class="formulario">
+    <h2>Nueva Transacción</h2>
+    <input type="text" id="descripcion" placeholder="Descripción" required>
+    <input type="number" id="monto" placeholder="Monto" required>
+    <select id="tipo">
+        <option value="ingreso">Ingreso</option>
+        <option value="gasto">Gasto</option>
+    </select>
+    <input type="text" id="categoria" placeholder="Categoría" required>
+    <button onclick="agregarTransaccion()">Agregar</button>
+    </section>
+
+    <section class="lista">
+    <h2>Transacciones</h2>
+    <select id="filtro" onchange="filtrarTransacciones()">
+        <option value="todas">Todas</option>
+        <option value="ingreso">Ingresos</option>
+        <option value="gasto">Gastos</option>
+    </select>
+    <div id="lista-transacciones">
+        <p id="sin-resultados">No hay transacciones aún.</p>
+    </div>
+    </section>
+    
+    
+    <script src="app.js"></script>
+</body>
+</html>
