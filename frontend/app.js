@@ -3,7 +3,7 @@ let transaccionEditandoId = null;
 
 async function obtenerTransacciones() {
   try {
-    const response = await fetch('http://localhost:3000/api/transacciones');
+    const response = await fetch('https://proyecto-final-gastos-personales-2.onrender.com/api/transacciones');
     transacciones = await response.json();
     renderizarLista();
     actualizarResumen();
@@ -74,8 +74,8 @@ async function agregarTransaccion() {
 
   try {
     const url = transaccionEditandoId 
-  ? `http://localhost:3000/api/transacciones/${transaccionEditandoId}`
-  : 'http://localhost:3000/api/transacciones';
+  ? `https://proyecto-final-gastos-personales-2.onrender.com/api/transacciones/${transaccionEditandoId}`
+  : 'https://proyecto-final-gastos-personales-2.onrender.com/api/transacciones';
 
       const method = transaccionEditandoId ? 'PUT' : 'POST';
 
@@ -102,7 +102,7 @@ async function eliminarTransaccion(id) {
   if (!confirm('¿Estás seguro de eliminar esta transacción?')) return;
 
   try {
-    await fetch(`http://localhost:3000/api/transacciones/${id}`, {
+    await fetch(`https://proyecto-final-gastos-personales-2.onrender.com/api/transacciones/${id}`, {
       method: 'DELETE'
     });
 
